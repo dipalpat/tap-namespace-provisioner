@@ -1,3 +1,10 @@
+> **&#9432; IMPORTANT**
+> 
+> Before you follow any of these procedures, make sure to take a backup copy of the TAP install values secret so that you can reset everything to defaults if something gets misconfigured.  You can do this with the following command:
+```shell
+kubectl get secret tap-tap-install-values -n tap-install -o yaml > tap-sandbox-backup.yaml
+```
+
 ## Test the Overlay
 Before applying, you can review the overlayed values with the following command to make sure everthing looks ok:
 
