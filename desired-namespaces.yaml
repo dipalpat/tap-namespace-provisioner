@@ -1,0 +1,23 @@
+#@data/values
+---
+#! The only required parameter is the name of the namespace. All additional values provided here like scanpolicy and pipeline
+#! for a namespace will be available under data.values for templating additional sources as data.values.scanpolicy and data.values.pipeline respectively
+namespaces:
+- name: apps
+- name: instructor1
+- name: instructor2
+- name: ns1
+- name: ns2
+- name: ns3
+- name: ns4
+- name: ns5
+- name: ns6
+- name: ns7
+- name: ns8
+- name: ns9
+- name: ns10
+- name: ns11
+- name: ns12
+- name: ns13
+- name: ns14
+- name: ns15
