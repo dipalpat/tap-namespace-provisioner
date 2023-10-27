@@ -33,7 +33,7 @@ namespace_provisioner:
     - git:
         ref: origin/main
         subPath: testing-scanning/namespace-provisioner/testing-scanning-supplychain
-        url: https://github.com/dipalpat/tap-namespace-provisionercd 
+        url: https://github.com/dipalpat/tap-namespace-provisioner
       path: _ytt_lib/testing-scanning-supplychain
 
 metadata_store:
