@@ -26,13 +26,13 @@ namespace_provisioner:
   controller: false
   gitops_install:
     ref: origin/main
-    subPath: testing-scanning/namespace-provisioner/namespaces
+    subPath: testing-scanning/namespaces
     url: https://github.com/dipalpat/tap-namespace-provisioner
   #@overlay/replace
   additional_sources:
     - git:
         ref: origin/main
-        subPath: testing-scanning/namespace-provisioner/testing-scanning-supplychain
+        subPath: testing-scanning/testing-scanning-supplychain
         url: https://github.com/dipalpat/tap-namespace-provisioner
       path: _ytt_lib/testing-scanning-supplychain
 
