@@ -1,4 +1,4 @@
-NAMESPACES=$(yq '.namespaces[].name' desired-namespaces.yaml)
+NAMESPACES=$(yq '.namespaces[].name' testing-scanning/namespaces/desired-namespaces.yaml)
 
 for ns in $NAMESPACES
 do
