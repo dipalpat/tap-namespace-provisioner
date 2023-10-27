@@ -26,13 +26,14 @@ namespace_provisioner:
   controller: false
   gitops_install:
     ref: origin/main
+    subPath: testing-scanning/namespace-provisioner/namespaces
     url: https://github.com/dipalpat/tap-namespace-provisioner
   #@overlay/replace
   additional_sources:
     - git:
         ref: origin/main
         subPath: testing-scanning/namespace-provisioner/testing-scanning-supplychain
-        url: https://github.com/Tanzu-Solutions-Engineering/tap-sandbox-cookbooks
+        url: https://github.com/dipalpat/tap-namespace-provisionercd 
       path: _ytt_lib/testing-scanning-supplychain
 
 metadata_store:
