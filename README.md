@@ -5,6 +5,10 @@
 kubectl get secret tap-tap-install-values -n tap-install -o yaml > tap-sandbox-backup.yaml
 ```
 
+```shell
+kubectl get secret tap-tap-install-values -n tap-install -o jsonpath='{.data.values\.yaml}' | base64 -d > tap-sandbox-decoded.yaml
+```
+
 ## Test the Overlay
 Before applying, you can review the overlayed values with the following command to make sure everthing looks ok:
 
