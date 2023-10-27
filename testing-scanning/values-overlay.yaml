@@ -28,7 +28,7 @@ namespace_provisioner:
     ref: origin/main
     subPath: testing-scanning/namespaces
     url: https://github.com/dipalpat/tap-namespace-provisioner
-  #@overlay/replace
+  #@overlay/add
   additional_sources:
     - git:
         ref: origin/main
