@@ -21,7 +21,7 @@ Once you are happy with the results, you can apply the overlay with the followin
 ```shell
 kubectl create secret generic tap-tap-install-values -n tap-install --dry-run=client -o yaml --from-file=values.yaml=<(kubectl get secret tap-tap-install-values -n tap-install -o jsonpath='{.data.values\.yaml}' | base64 -d | ytt -f- -f values-overlay.yaml) | kubectl apply -f-
 ```
-## Assign Build Service Admin
+## Assign Build Service Admin Role
 To assign build service admin role to developer scoped service account, follow the steps in this section. The addtional role will allow users to create/edit/delete stacks and builders for both cluster and namespace scope.
 
 Once TAP install is reconciled, run the setup.sh script to create rolebindings, service accounts, secrets and kubeconfigs for attendees. Kubeconfigs are created within the ./kubeconfigs folder. 
