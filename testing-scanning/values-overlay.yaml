@@ -20,7 +20,7 @@ supply_chain: testing_scanning
 
 buildservice:
   #@verlay/add
-  exclude_dependencies: true
+  exclude_dependencies: false
 
 namespace_provisioner:
   controller: false
