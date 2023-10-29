@@ -1,29 +1,5 @@
 
-# export NAMESPACES=$(kubectl get cm desired-namespaces -n tap-namespace-provisioning -o jsonpath='{.data.namespaces\.yaml}' | yq '.namespaces[].name')
 NAMESPACES=$(yq '.namespaces[].name' testing-scanning/namespaces/desired-namespaces.yaml)
-# NAMESPACES=$(cat << EOM
-# instructor1
-# instructor2
-# ns1
-# ns10
-# ns11
-# ns12
-# ns13
-# ns14
-# ns15
-# ns2
-# ns3
-# ns4
-# ns5
-# ns6
-# ns7
-# ns8
-# ns9
-# EOM
-# )
-
-SERVER=$(yq e '.clusters[].cluster.server' ~/Downloads/developer_tenant_kubeconfig.yml)
-CERT=$(yq e '.clusters[].cluster.certificate-authority-data' ~/Downloads/developer_tenant_kubeconfig.yml)
 
 
 for ns in $NAMESPACES
