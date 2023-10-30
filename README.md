@@ -27,6 +27,7 @@ To assign build service admin role to developer scoped service account, follow t
 Once TAP install is reconciled, run the setup.sh script to create rolebindings, service accounts, secrets and kubeconfigs for attendees. Kubeconfigs are created within the ./kubeconfigs folder. 
 
 ```shell
+mkdir kubeconfigs
 ./setup.sh
 ```
 ## Install TBS Full Dependencies
