@@ -4,9 +4,9 @@ export REG=${URL%%/*}
 echo $(yq '.buildservice.kp_default_repository_password' tap-sandbox-decoded.yaml) | docker login -u _json_key_base64 --password-stdin https://$REG
 
 #9.13.0
-# imgpkg copy -i registry.tanzu.vmware.com/tanzu-java-azure-buildpack/java-azure@sha256:4e677d8bfa9ffc0ddc2b4ae11b718b5b2d9f64b06867088ac2be7ed6708ef80d \
-# --to-repo $URL/java-azure \
-# --include-non-distributable-layers
+imgpkg copy -i registry.tanzu.vmware.com/tanzu-java-azure-buildpack/java-azure@sha256:4e677d8bfa9ffc0ddc2b4ae11b718b5b2d9f64b06867088ac2be7ed6708ef80d \
+--to-repo $URL/java-azure \
+--include-non-distributable-layers
 
 #9.14.0
 imgpkg copy -i registry.tanzu.vmware.com/tanzu-java-azure-buildpack/java-azure@sha256:1b2cabe3290a15928d541e16738d4f7bf85dbd903baa500d833bb14d7e08f082 \
