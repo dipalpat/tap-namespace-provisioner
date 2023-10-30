@@ -1,5 +1,7 @@
 NAMESPACES=$(yq '.namespaces[].name' testing-scanning/namespaces/desired-namespaces.yaml)
 
+kubectl apply -f clusterstack.yaml
+kubectl apply -f builder.yaml
 
 for ns in $NAMESPACES
 do
@@ -13,7 +15,7 @@ do
     --annotation autoscaling.knative.dev/minScale=1 \
     --label app.kubernetes.io/part-of=petclinic \
     --label apps.tanzu.vmware.com/has-tests="true" \
-    --param clusterBuilder=tiny-jammy \
+    --param clusterBuilder=tiny-bulk-update-demo-builder \
     --yes
 
     # tanzu apps workload delete staged-workload-for-build-update-$ns --yes
