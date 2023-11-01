@@ -47,3 +47,10 @@ scanning:
     requests:
       cpu: 200m
       memory: 1Gi
+
+ootb_supply_chain_testing_scanning:
+  registry:
+    server: xploretanzu.azurecr.io
+    repository: tap-sandbox-dev/tap-workloads
+  gitops:
+    ssh_secret: ""
