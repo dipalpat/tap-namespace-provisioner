@@ -8,6 +8,20 @@ cp ~/Downloads/config ~/.kube/config
 kubectx tap-sandbox
 ./backup-tap-values.sh
 ```
+## Container Repository change from GAR to repo of your choice
+There is an issue with image rebase function with GAR. The overlay will change the OOTB to use ACR in my setup. Please adjust the repo settings in overlay file before applying it. Also create a secret and secretExport beforing applying the overlay.
+
+```
+kubectl create secret docker-registry acr-reg-credentials \
+    --namespace tap-install \
+    --docker-server=server \
+    --docker-username=user \
+    --docker-password=passwrd
+```
+
+```
+kubectl apply -f secretexport.yaml
+```
 
 ## Test the Overlay
 Before applying, you can review the overlayed values with the following command to make sure everthing looks ok:
@@ -30,6 +44,7 @@ Once TAP install is reconciled, run the setup.sh script to create rolebindings, 
 mkdir kubeconfigs
 ./setup.sh
 ```
+
 ## Install TBS Full Dependencies
 To install TBS Full Dependencies, set environment variables before running ./install-tbs-full-deps.sh. In the values-overlay.yaml, set the exclude_dependencies to true if installing TBS Full dependencies and applying the overlay before running these steps.
 ```shell
